@@ -1,0 +1,59 @@
+# This code presents a fuzzy logic algorithm written in python style code for the remote id, rf selection for a drone:
+
+#Abstract View for our Mathematical Model in steps:
+#In the first 100 meters for flight from the remote control we transmit through bluetooth and wifi. 
+#After the 100 meters initial flight and away from the remote control we transmit constantly with ads-b out and we receive from ads-b in.
+#After the 100 meters initial flight and away from the remote control we transmit through, bluetooth, wifi, 4g/5g, and/or IoT, and/or satellite according to availability and energy battery efficiency. This RF communication call through 4G/5G, IoT and satellite is made to the local Aviation Authority and /or IoT devices to airplanes and other devices or other available objects. This decision comes from a fuzzy logic model made algorithm. 
+
+
+PseudoCode Model:
+float wifi;
+float bluetooth_transmit;
+bool bluetooth_available;
+bluetooth_transmit
+float IoT;
+float ADS_B_transmit;
+float 4G;
+float 5G;
+float SatCom;
+float range_from_rc;
+bool wifi_available;
+while flight = true:
+	if range_from_rc < 100:
+		wifi_transmit and bluetooth_transmit is true
+	elsif range_from_rc > 100:
+	ads_b_transmit = true;
+		if (wifi_available == true or bluetooth_available == true):
+			if wifi_available == true:
+				wifi_transmit = true;
+			else bluetooth_transmit = true;
+		elsif 4g_available == true:
+			4g_transmit = true;
+		elsif 5g_available == true:
+			5g_transmit = true;
+		elsif iot_available == true:
+			iot_transmit = true;	
+		else sat_transmit =  true;
+In case of battery consumption emergency the following code can be applied:
+while flight = true:
+	if range_from_rc < 100:
+		wifi_transmit and bluetooth_transmit is true
+	elsif range_from_rc > 100:
+	ads_b_transmit = true;
+if energy_emergency = true:
+			if (wifi_available == true or bluetooth_available == true):
+			if wifi_available == true:
+				wifi_transmit = true;
+			else bluetooth_transmit = true;
+			
+			elsif iot_available == true:
+				iot_transmit = true;
+			
+			elsif 4g_available == true:
+			4g_transmit = true;
+			elsif 5g_available == true:
+			5g_transmit = true:
+			else sat_transmit =  true;
+		
+
+
