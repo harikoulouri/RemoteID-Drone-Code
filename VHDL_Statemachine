@@ -2,8 +2,11 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity statemachine is 
+entity RemoteIDstatemachine is 
 
+
+	architecture sim of RemoteIDstatemachine is
+	
 	port(
 		bluetooth, wifi, adsb, 4g, 5g, iot, sat : in std_logic;
 		
@@ -12,5 +15,14 @@ entity statemachine is
 		
 		end statemachine;
 		
-		
+	
+end entity;
+
+
+architecture rtl of RemoteIDstatemachine is
+
+
+	-- Enumerated type declaration and state signal declaration
+	type t_state is (
+			
 		
