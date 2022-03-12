@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity statemachine is 
+
+	port(
+		bluetooth, wifi, adsb, 4g, 5g, iot, sat : in std_logic;
+		
+		bluetooth, wifi, adsb, 4g, 5g, iot, sat : out std_logic
+		);
+		
+		end statemachine;
+		
+		
+		
